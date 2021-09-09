@@ -185,20 +185,16 @@ app.delete("/items/:id", function(req, res){
     console.log("this is toDelete: ", toDelete )
 
     db.splice(toDelete,1)
+
+    // I want to add in a error that says there is not a index that number available
+    // I am working on how to do that 
+    // I have not figured it out yet
+
+
+
     res.sendStatus(204); // use .sendStatus when only sending the code
 })
 
-
-// // this the the old way that really does not work
-// // DELTE /items/:id
-// // find the item with the id in the db, and remove it
-// app.delete("/items/:id", function(req, res){
-//     //console.log("DELETE /items/:id", req.body)
-//     let theID = req.params.id;
-//     console.log("item to be deleted: ",db[theID-1])
-//     db.splice(theID-1,1)
-//     res.sendStatus(204); // use .sendStatus when only sending the code
-// })
 
 
 // start the application server
